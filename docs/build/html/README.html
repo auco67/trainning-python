@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="ja" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Sphinx &#8212; Sphinx 1.0.0 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=144c8c96"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=91613774"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="2. example_google" href="modules.html" />
+    <link rel="prev" title="目次" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sphinx">
+<h1><span class="section-number">1. </span>Sphinx<a class="headerlink" href="#sphinx" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/">Sphinx</a> はブラウザーで表示するドキュメント（オンラインマニュアル 等）を作成するツールです。 具体的には reStructredText を使用してマークダウン記法で書いたファイルを HTML 形式や PDF 形式などのファイルに変換するツールです。 元々は Python のドキュメント用に作成されたものですが、現在は多くのドキュメントを作成するのに使用されています。 名称は Sphinx ですが、「ホルスの目」のアイコンが使用されています。</p>
+<section id="id1">
+<h2><span class="section-number">1.1. </span>環境構築<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Sphinx のインストール</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">sphinx</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Sphinx の拡張機能のインストール</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>作業ディレクトリ docs を作成する</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docs</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Sphinx プロジェクトの雛形を作成する</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span> <span class="n">docs</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Separate</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">directories</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Author</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>　<span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">release</span> <span class="p">[]:</span>　<span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">language</span> <span class="p">[</span><span class="n">en</span><span class="p">]:</span>　<span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(1):ソースファイルとビルドファイルを別のディレクトリに分けるかどうか</p>
+<p>(2):プロジェクト名を入力する</p>
+<p>(3):作者名を入力する</p>
+<p>(4):プロジェクトのバージョンを入力する</p>
+<p>(5):プロジェクトの言語を指定する（例：日本語の場合「ja」）</p>
+<p>上記実行後、作業ディレクトリ docs に以下のようなサブディレクトリとファイルが生成される</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docs
+├── make.bat
+├── Makefile
+├── build
+└── source
+   ├── conf.py
+   ├── index.rst
+   ├── _static
+   └── _templates
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>conf.py を編集する</p></li>
+</ol>
+<p>3-1. 作成した Python ファイルを読み込めるよう以下を最上部に追加する</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>3-2. extensions を以下のように変更する</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;myst_parser&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>sphinx.ext.autodoc: docstring を自動的に読み込むための拡張機能</p></li>
+<li><p>sphinx.ext.napoleon: Numpy スタイルや Google スタイルの docstring をパースするための拡張機能</p></li>
+<li><p>myst_parser: Markdown ファイルからドキュメントを生成するための拡張機能</p></li>
+</ul>
+<p>3-3. source_suffix 変数を追記する</p>
+<p>各拡張子と各マークアップ言語と紐づけする</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source_suffix</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;.rst&#39;</span><span class="p">:</span> <span class="s1">&#39;restructuredtext&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.txt&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.md&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>ドキュメントを自動生成したい Python ファイルを docs と同じ階層に、README.md は docs/source に配置する</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docs
+├── make.bat
+├── Makefile
+├── example_google.py *
+├── example_numpy.py *
+├── example_japanese.py *
+├── build
+└── source
+   ├── conf.py
+   ├── index.rst
+   ├── README.md *
+   ├── _static
+   └── _templates
+</pre></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>index.rst を編集する</p>
+<p>index.rst はドキュメントのトップページを生成するためのファイル</p>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>####
+目次
+####
+
+.. toctree::
+  :numbered:
+
+  ./README
+　./modules
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>.. toctree:: ドキュメントの目次を作成するためのディレクティブ</p></li>
+<li><p>:numbered: ナンバリングする</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>index.rst を複製して modules.rst を作成する</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">###############</span>
+<span class="n">example_google</span>
+<span class="c1">###############</span>
+<span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">4</span>
+
+<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">example_google</span>
+  <span class="p">:</span><span class="n">menbers</span><span class="p">:</span>
+
+<span class="c1">################</span>
+<span class="n">example_numpy</span>
+<span class="c1">################</span>
+<span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">4</span>
+
+<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">example_numpy</span>
+   <span class="p">:</span><span class="n">members</span><span class="p">:</span>
+
+<span class="c1">###############</span>
+<span class="n">example_japanese</span>
+<span class="c1">###############</span>
+<span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">4</span>
+
+<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">example_japanese</span>
+  <span class="p">:</span><span class="n">menbers</span><span class="p">:</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>.. automodule:: python ファイル名</p></li>
+<li><p>:members:</p></li>
+</ul>
+<ol class="arabic simple" start="7">
+<li><p>以下コマンドを実行する</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">M</span> <span class="n">html</span> <span class="n">docs</span><span class="o">/</span><span class="n">source</span><span class="o">/</span> <span class="n">docs</span><span class="o">/</span><span class="n">build</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>上記実行後、作業ディレクトリ docs に以下の*が付いたサブディレクトリとファイルが生成される</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docs
+├── make.bat
+├── Makefile
+├── example_google.py
+├── example_japanese.py
+├── example_numpy.py
+└── build
+├   ├── doctrees *
+├   ├   ├── environment.pickle *
+├   ├   ├── index.doctree *
+├   ├   ├── modules.doctree *
+├   └── html *
+├       ├── .buildinfo *
+├       ├── genindex.html *
+├       ├── index.html *
+├       ├── objects.inv *
+├       ├── py-modindex.html *
+├       ├── search.html *
+├       ├── searchindex.js *
+├       ├── sources *
+├       ├   ├── index.rst.txt *
+├       ├   └── modules.rst.txt *
+├       └── static *
+├           ├── alabaster.css *
+├           ├── basic.css *
+├           ├── custom.css *
+├           ├── doctools.js *
+├           ├── documentation_options.js *
+├           ├── file.png *
+├           ├── language_data.js *
+├           ├── minus.png *
+├           ├── plus.png *
+├           ├── pygments.css *
+├           ├── searchtools.js *
+├           ├── sphinx_highlight.js *
+├           └── translations.js *
+└── source
+   ├── conf.py
+   ├── index.rst
+   ├── README.md
+   ├── _static
+   └── _templates
+</pre></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>index.html をブラウザで開く</p>
+<p>docs/build/html/index.html をブラウザで開くとドキュメントが確認できる</p>
+</li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Sphinx</a></h1>
+
+
+
+
+
+
+
+
+<h3>ナビゲーション</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Sphinx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 環境構築</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">2. example_google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#example-numpy">3. example_numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#example-japanese">4. example_japanese</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="前の章へ">目次</a></li>
+      <li>Next: <a href="modules.html" title="次の章へ"><span class="section-number">2. </span>example_google</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Ayuko Hosaka.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/README.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

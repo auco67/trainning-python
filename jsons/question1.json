@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "question": "Pythonでリストの要素数を取得するための関数はどれですか？",
+    "choices": [
+      {
+        "A": "size()",
+        "B": "count()",
+        "C": "length()",
+        "D": "len()"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Pythonではリストやタプル、文字列などの要素数を取得するためにlen()関数を使用します。\n\t例えば、len([1, 2, 3])は3を返します。"
+  },
+  {
+    "id": 2,
+    "question": "次のコードの出力は何ですか？\n\tprint(2 ** 3)",
+    "choices": [
+      {
+        "A": "5",
+        "B": "6",
+        "C": "8",
+        "D": "9"
+      }
+    ],
+    "answer": "C",
+    "explanation": "**はべき乗演算子です。2 ** 3は2の3乗を意味し、結果は8です。"
+  },
+  {
+    "id": 3,
+    "question": "次のコードの出力は何ですか？\n\tmy_list = [1, 2, 3, 4, 5]\n\tprint(my_list[2])",
+    "choices": [
+      {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      }
+    ],
+    "answer": "C",
+    "explanation": "ストのインデックスは0から始まります。\n\tmy_list[2]はリストの3番目の要素を指し、これは3です。"
+  },
+  {
+    "id": 4,
+    "question": "次のコードの出力は何ですか？\n\tx = 10\n\ty = 5\n\tprint(x // y)",
+    "choices": [
+      {
+        "A": "0.5",
+        "B": "2",
+        "C": "2.0",
+        "D": "5"
+      }
+    ],
+    "answer": "B",
+    "explanation": "//は整数除算演算子です。10 // 5は2を返します。小数点以下は切り捨てられます。"
+  },
+  {
+    "id": 5,
+    "question": "次のコードの出力は何ですか？\n\tdef greet(name):\n\t\t return 'Hello, ' + name\n\t\n\tprint(greet('Alice'))",
+    "choices": [
+      {
+        "A": "Hello,",
+        "B": "Hello, Alice",
+        "C": "Hi, Alice",
+        "D": "Hi,"
+      }
+    ],
+    "answer": "B",
+    "explanation": "関数greetは引数nameを受け取り、'Hello, 'という文字列と結合して返します。\n\tgreet('Alice')は'Hello, Alice'を返します"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "question": "問題１",
+    "choices": [
+      {
+        "A": "Aである",
+        "B": "Bである",
+        "C": "Cである",
+        "D": "Dである"
+      }
+    ],
+    "answer": "Dである",
+    "explanation": "A,B,Cは間違いでDが正解である。"
+  },
+  {
+    "id": 2,
+    "question": "問題１",
+    "choices": [
+      {
+        "A": "Aである",
+        "B": "Bである",
+        "C": "Cである",
+        "D": "Dである"
+      }
+    ],
+    "answer": "Dである",
+    "explanation": "A,B,Cは間違いでDが正解である。"
+  },
+  {
+    "id": 3,
+    "question": "問題１",
+    "choices": [
+      {
+        "A": "Aである",
+        "B": "Bである",
+        "C": "Cである",
+        "D": "Dである"
+      }
+    ],
+    "answer": "Dである",
+    "explanation": "A,B,Cは間違いでDが正解である。"
+  },
+  {
+    "id": 4,
+    "question": "問題１",
+    "choices": [
+      {
+        "A": "Aである",
+        "B": "Bである",
+        "C": "Cである",
+        "D": "Dである"
+      }
+    ],
+    "answer": "Dである",
+    "explanation": "A,B,Cは間違いでDが正解である。"
+  },
+  {
+    "id": 5,
+    "question": "問題１",
+    "choices": [
+      {
+        "A": "Aである",
+        "B": "Bである",
+        "C": "Cである",
+        "D": "Dである"
+      }
+    ],
+    "answer": "Dである",
+    "explanation": "A,B,Cは間違いでDが正解である。"
+  }
+]

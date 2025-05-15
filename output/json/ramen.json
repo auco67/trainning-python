@@ -1,0 +1,17 @@
+{
+  "name": "蔦",
+  "ranking": 4.6,
+  "address": "東京都千代田区神田須田町2-5-4",
+  "menu": [
+    {
+      "name": "特製醤油 Soba",
+      "price": 3000
+    },
+    {
+      "name": "チャーシュー 味玉醤油 Soba",
+      "price": 2500
+    }
+  ],
+  "phone": "03-1234-5678",
+  "reservation": false
+}
